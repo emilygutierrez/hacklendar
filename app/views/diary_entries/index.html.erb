@@ -1,0 +1,12 @@
+<%= @diary_entries.length %>
+
+<%= @diary_entries_positive.length %>
+
+
+<% @diary_entries.each do |d| %> 
+	<% if d.mood == "happy" || d.mood == "joyful" %>
+		<div style='color: green'><%= d.mood %></div>
+	<% else %>
+		<div><%= d.mood %></div>
+	<% end %>		
+<% end %>
