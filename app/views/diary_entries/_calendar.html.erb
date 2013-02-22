@@ -1,0 +1,13 @@
+<h2><%= @day.strftime("%B %Y") %></h2>
+
+<table>
+<% (@day.to_date.beginning_of_month.beginning_of_week..@day.to_date.end_of_month.end_of_week).each do |day| %>
+	<% if day.monday? %>
+		<tr>
+	<% end %>		
+	<td class="span1"><%= link_to day.day, diary_entries_path(day: day) %></td>
+<% end %>
+<td class="span2"><%= link_to "Previous month", diary_entries_path(day: @day - 1.month) %></td>
+<td class="span2"><%= link_to "Next month", diary_entries_path(day: @day + 1.month) %></td>
+</table>
+
