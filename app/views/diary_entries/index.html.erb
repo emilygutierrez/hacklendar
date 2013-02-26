@@ -51,29 +51,18 @@
 	</div>
 
 
-	<form>
-	  <fieldset>
-	    <legend>Diary Entries</legend>
-	    <input type="text" placeholder="Title"><br />
-	    <textarea rows="3" placeholder="Description"></textarea><br />
-	    <button type="submit" class="btn">Submit</button>
-	  </fieldset>
-	</form>
-
 	<p>
 		<button class="btn btn-info" type="button">
 			<%= link_to 'New Diary Entry', new_diary_entry_path %>
 		</button>	
 	</p>
 	<table class="table">
-		<td>#</td>
 		<td>Title</td>
 		<td>Description</td>
 		<td>Mood</td>
 
 		<% @diary_entries.each do |d| %>
 			<tr>
-				<td><%= d.id %></td>
 				<td><%= d.title %></td>
 				<td><%= d.description %></td>
 				<td><%= d. mood %></td>
